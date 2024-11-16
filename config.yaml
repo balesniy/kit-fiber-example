@@ -1,0 +1,24 @@
+server:
+  port: ":3000"
+  shutdownTimeout: 30
+
+rateLimit:
+  requests: 100
+  duration: "1m"
+
+circuitBreaker:
+  threshold: 5
+  timeout: "1m"
+  maxRequests: 10
+
+telemetry:
+  serviceName: "string-service"
+  collectorAddr: "jaeger:4317"
+  samplingRatio: 0.1
+
+claude:
+  apiKey: "your-api-key-here"
+  baseURL: "https://api.anthropic.com/v1/messages"
+  model: "claude-3-sonnet-20240229"
+  timeout: 30
+  maxRetries: 3
